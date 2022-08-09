@@ -19,9 +19,18 @@ int _printf(const char *format, ...)
 	_putchar(format[i]);
 	printed_chars += _putchar(format[i]);
 	}
-	
-	if(format[i] == '%' && format[i+1] !=' ')
-	switch (format[i+1]) 
+
+	if (format[i] == '%' && format[i + 1] != ' ')
+		switch (format[i + 1])
+		{
+			case 'c':
+					printed_chars = print_ch(args);
+					break;
+			default:
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					i += 2;
+		}
 va_end(args);
 return (printed_chars);
 }
