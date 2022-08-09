@@ -15,13 +15,9 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	for (i = 0; format[i] != '%' && format[i]; i++)
-	{
 	_putchar(format[i]);
 	printed_chars += _putchar(format[i]);
-	}
-	
-	if(format[i] == '%' && format[i+1] !=' ')
-	switch (format[i+1]) 
+
 va_end(args);
 return (printed_chars);
 }
