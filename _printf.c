@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - prints anything
  * @format: the format string
@@ -13,7 +12,7 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-while (format[i])
+	while (format[i])
 	{
 		while (format[i] == '%')
 		{
@@ -21,6 +20,10 @@ while (format[i])
 			{
 				case 'c':
 					printed_char += print_ch(args);
+					i += 2;
+					break;
+				case 's':
+					printed_char += print_str(args);
 					i += 2;
 					break;
 				case '%':
@@ -40,10 +43,8 @@ while (format[i])
 			_putchar(format[i]);
 			printed_char++;
 		}
-
 		i++;
 	}
 	va_end(args);
-
 	return (printed_char);
 }
