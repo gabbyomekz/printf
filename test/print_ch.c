@@ -6,7 +6,7 @@
 *
 * Return: always 1
 */
- 
+
 int print_ch(va_list args)
 {
 	_putchar(va_arg(args, int));
