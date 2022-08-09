@@ -1,10 +1,13 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdarg.h>
-int _putchar(char c);
 int _printf(const char *format, ...);
-int print_ch(va_list);
-int print_str(va_list);
+int _putchar(char c);
+int print_string(char *);
+int print_decimal(int value);
+long long int power(int base, int x);
+long long convertToDecimal(int Number, int base);
+int print_binary(int number);
+int print_unsigned(unsigned int number);
 
 #endif
